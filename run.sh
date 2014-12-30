@@ -16,7 +16,7 @@
 
 # listen or wait until elasticsearch got connected
 echo -e "\033[1;36mWaiting and trying to connect to elasticsearch\033[0m"
-while ! nc -q 1 elasticsearch.rest.local 9200 </dev/null 2>&1; do
+while ! curl -s elasticsearch.rest.local:9200 2>&1 >/dev/null ; do
   echo -e "  \033[1;33mConnecting failed, retry after 30s\033[0m"
   sleep 30
 done
