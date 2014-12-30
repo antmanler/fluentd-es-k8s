@@ -2,9 +2,9 @@
 TAG = latest
 
 build:
-	docker build --force-rm -t antmanler/fluentd:${TAG} .
+	docker build --force-rm -t d.rest/fluentd-es-k8s:${TAG} .
 
 push:
-	docker push antmanler/fluentd:$(TAG)
+	docker push d.rest/fluentd-es-k8s:$(TAG)
 
 .PHONY: build push

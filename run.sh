@@ -14,12 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# listen or wait until elasticsearch got connected
-echo -e "\033[1;36mWaiting and trying to connect to elasticsearch\033[0m"
-while ! curl -s elasticsearch.rest.local:9200 2>&1 >/dev/null ; do
-  echo -e "  \033[1;33mConnecting failed, retry after 30s\033[0m"
-  sleep 30
-done
+: ${ES_HOST:="elasticsearch.kubernetes.local"}
 
-echo -e "\033[1;36mStarting Fluentd\033[0m"
+sed -i -e "s/\%ES_HOST\%/${ES_HOST}/" /etc/td-agent/td-agent.conf
 /usr/sbin/td-agent -qq "$@"

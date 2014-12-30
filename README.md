@@ -16,4 +16,3 @@ Modified from [Kubernetes](https://github.com/GoogleCloudPlatform/kubernetes/tre
 **Change:**
 
 * Using dns (skydns) to discovery Elasticsearch service
-* Blocking and wating until Elasticsearch comes online
