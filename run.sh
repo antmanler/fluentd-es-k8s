@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-: ${ES_HOST:="elasticsearch.kubernetes.local"}
+: ${ES_HOST:="elasticsearch.default.kubernetes.local"}
 
 sed -i -e "s/\%ES_HOST\%/${ES_HOST}/" /etc/td-agent/td-agent.conf
 /usr/sbin/td-agent -qq "$@"
