@@ -1,3 +1,4 @@
+This projects is deprecated, using offical image directly, since k8s offically support DNS
 
 Modified from [Kubernetes](https://github.com/GoogleCloudPlatform/kubernetes/tree/master/contrib/logging/fluentd-es-image)
 
